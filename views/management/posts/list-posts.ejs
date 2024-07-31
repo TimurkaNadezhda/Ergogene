@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../../components/head.ejs', {
+  title: 'Ergogene | Liste des publications',
+  styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+    <%- include('../../components/header.ejs') %>
+
+    <% if (locals.message) { %>
+      <p class="message"><%= message %></p>
+    <% } %>
+    
+    <a class="admin-panel" href="/admin">Dashboard</a>    
+    <a class="add-post" href="/posts/create">Ajouter un publication</a>
+
+    <h1>Liste des publication</h1>
+    <% if(posts) { %>
+    <table class="list-posts">
+        <tr>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        <% posts.forEach(post => { %>
+        <tr>
+            <td>
+                <p><%= post.date %></p>
+            </td>
+            <td>
+                <p><%= post.title %></p>
+            </td>
+            <td><%= post.status ? 'Published' : 'Draft' %></td>
+            <td class="action"><a class="update" href="/posts/<%= post._id %>/update/">Modifier</a></td>
+            <td class="action"><a class="delete" href="/posts/<%= post._id %>/delete">Supprimer</a></td>
+        </tr>
+      <% }) %>
+    </table>
+    <% } else { %>
+      <div>No posts were created...</div>
+    <% } %>
+
+    <%- include('../../components/footer.ejs') %>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../../components/head.ejs', {
+  title: 'Ergogene | Post update',
+  styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+  <%- include('../../components/header.ejs') %>
+
+  <% if(message) { %> 
+    <p class="message"><%= message %></p>
+  <% } %>
+
+  <a class="admin-panel" href="/posts">Revenir à la liste des publications</a>  
+  <main>            
+      <h1>Mise à jour de la publication <br> "<%= detailsPost.title %>"</h1>
+      <form
+        action="/posts/<%= detailsPost._id %>/update?_method=PUT"
+        method="POST"
+        >
+        <div>
+            <label for="title">Titres</label>
+            <input
+            type="text"
+            id="title"
+            name="title"
+            value="<%= detailsPost ? detailsPost.title : '' %>"
+            />
+        </div>
+        <div>
+            <label for="subtitle">Sous-titre</label>
+            <input
+            type="text"
+            id="subtitle"
+            name="subtitle"
+            value="<%= detailsPost ? detailsPost.subtitle : '' %>"
+            />
+        </div>
+        <div>
+            <label for="subtitle">Date</label>
+            <input
+            type="text"
+            id="date"
+            name="date"
+            value="<%= detailsPost ? detailsPost.date : '' %>"
+            />
+        </div>
+        <div>
+          <label for="link">Link</label>
+          <input
+            type="text"
+            id="link"
+            name="link"
+            value="<%= detailsPost ? detailsPost.link : '' %>"
+          />
+        </div>
+        <div>
+          <label for="status">Status</label>
+          <select id="status" name="status">
+              <option value="1"<%= detailsPost && detailsPost.status ? ' selected' : '' %>>Published</option>
+              <option value="0"<%= detailsPost && !detailsPost.status ? ' selected' : '' %>>Draft</option>
+          </select>
+        </div>
+        <div>
+          <label for="summary">Résumé</label>
+            <textarea
+              type="text"
+              id="summary"
+              name="summary"
+              > 
+              <%= detailsPost ? detailsPost.summary : '' %>"
+            </textarea>
+        </div>
+        <button class="form-button">Modifier</button>
+      </form>
+  </main>
+
+  <%- include('../../components/footer.ejs') %>
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../components/head.ejs', {
+    title: 'Ergogene | Delete user',
+    styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+    <%- include('../../components/header.ejs') %>
+
+    <main class="center-aligned">
+        <h1>Suppression de <%= detailsUser.lastname %> <%= detailsUser.firstname %></h1>
+
+        <form class="form-actions" action="/users/<%= detailsUser._id %>/delete?_method=DELETE" method="POST">
+            <a class="cancel" href="/users">Annuler</a>
+            <button class="form-button">Confirmer</button>
+        </form>
+    </main>
+
+    <%- include('../../components/footer.ejs') %>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

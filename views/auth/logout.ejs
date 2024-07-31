@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../components/head.ejs', {
+    title: 'Ergogene | Log Out',
+    styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+    <%- include('../components/header.ejs') %>
+
+    <main class="center-aligned">
+        <h1>Déconnexion</h1>
+        <form class="form-actions" action="/logout" method="POST">
+            <a class="cancel" href="/admin">Annuler</a>
+            <button class="form-button">Confirmer</button>
+        </form>
+    </main>
+
+    <%- include('../components/footer.ejs') %>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

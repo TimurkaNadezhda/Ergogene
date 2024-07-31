@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../components/head.ejs', {
+    title: 'Ergogene | Dashboard',
+    styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+    <%- include('../components/header.ejs') %>
+       
+    <main> 
+        <h1>Admin Dashboard</h1>
+        <section>
+            <h2>Utilisateurs</h2>
+            <a class="dashboard" href="/users">Liste des utilisateurs</a>
+            <% if (isAdmin) { %>
+                <a class="dashboard" href="/users/create">Créer un utilisateur</a>
+            <% } %>    
+        </section>
+
+        <section>
+            <h2>Publications</h2>
+            <a class="dashboard" href="/posts">Liste des publications</a>
+            <a class="dashboard" href="/posts/create">Créer un publication</a>  
+        </section>
+    </main>
+
+    <%- include('../components/footer.ejs') %>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

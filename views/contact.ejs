@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('./components/head.ejs', { title: 'Contact | Ergogene', description: 'Contactez Ergogene dès aujourd\'hui pour découvrir comment nous pouvons vous aider à optimiser l\'ergonomie et l\'organisation du travail dans votre entreprise. Remplissez le formulaire de contact avec vos coordonnées et votre message, et nous vous répondrons dans les plus brefs délais.' }) %>
+<body>
+    <%- include('./components/header.ejs') %>    
+        
+    <main>
+        <section class="section-cta">
+            <div class="container">
+                <div class="cta">
+                    <div class="cta-textBox">
+                        <h1 class="contact"><span>Contacter</span> Ergogene</h1>
+                        <p class="ctaText">Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous aider à optimiser l'ergonomie et l'organisation du travail dans votre entreprise</p>
+                        
+                        <%- include('./components/errors.ejs') %>
+                        
+                        <% if (locals.message) { %>
+                            <p class="message"><%= message %></p>
+                        <% } %>
+                        
+                        <form action="/contact" class="cta-form" method="post">
+                            <div>
+                                <label for="lastname">Nom *</label>
+                                <input type="text" id="lastname" name="lastname" pattern ="^[^\d]+$" title="Entrez un nom valide" required>
+                            </div>
+                            <div>
+                                <label for="firstname">Prénom *</label>
+                                <input type="text" id="firstname" name="firstname" pattern ="^[^\d]+$" title="Entrez un prénom valide" required>
+                            </div>
+                            <div>
+                                <label for="jobTitle">Fonction *</label>
+                                <input type="text" id="jobTitle" name="jobTitle" required>
+                            </div>
+                            <div>
+                                <label for="tel">Téléphone</label>
+                                <input type="tel" id="tel" name="tel" pattern="[0-9]{10}">
+                            </div>
+                            <div>
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email"  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Entrez une adresse email valide" required>
+                            </div>
+                            <div>
+                                <label for="subject">Sujet</label>
+                                <select name="subject" id="subject" required>
+                                    <option value="info1">information</option>
+                                    <option value="info2">demande de rappel</option>
+                                    <option value="info3">planification d'intervention</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message"></textarea>
+                            </div>
+                            <button class="send">ENVOYER</button>
+                        </form>
+                    </div>
+                    <div class="cta-imageBox">
+                        <!-- <img src="Resources/contact.jpg" alt="Contact"> -->
+                        <div class="cta-img"></div>
+                        <div class="cta-imageContact">
+                            <h2>Maité <span>Kindts</span></h2>
+                            <div class="cta-info">
+                                <p>maitekindts@gmail.com</p>
+                                <p>06 68 16 72 71</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>    
+         
+    <%- include('./components/footer.ejs') %>    
+             
+    <script src="scripts/main.js"></script>
+</body>
+</html>

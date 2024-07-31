@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <%- include('./components/head.ejs', { title: 'Prestations | Ergogene', description: 'Découvrez nos services variés et sur mesure chez Ergogene, conçus pour répondre spécifiquement à vos besoins. Nous proposons des journées de sensibilisation sur différents thèmes, des ateliers de design thinking, des études et diagnostics centrés sur l&#39;imbrication des enjeux performances et santé au travail, ainsi que des approches brèves et personnalisées de coaching pour les encadrants et les dirigeants.' }) %>
+<body>
+    <%- include('./components/header.ejs') %>
+    
+    <main>
+        <section class="prestation container">
+            <div class="head-block column">
+                <h1 class="titleLeft"><span class="mainTitle">Prestations</span> Ergogene</h1>
+                <p>Chez Ergogene, nous comprenons que chaque entreprise est unique. C'est pourquoi nous proposons des services variés et sur mesure pour répondre spécifiquement à vos besoins</p>
+            </div>
+
+            <article class="prestation container">   
+                <div class="prestationContent row rowReverse">
+                    <div class="prestationVideo column">
+                        <video src="/videos/clock_-_21844 (360p).mp4" autoplay muted loop></video>
+                    </div>
+                    <div class="prestationText column">
+                        <h2 class="titleLeft" id="service1">Journée de sensibilisation</h2>
+                        <p>
+                            Adapté aux événements d’entreprises ou à vos journées thématiques, Ergogene anime vos
+                            journées de sensibilisations sur différents thèmes :   
+                        </p>
+                        <p>
+                            - les <b>TMS à travers un atelier ludique</b> modulé en fonction de vos spécificités, de votre
+                            environnement, votre publique, du nombre de personnes à former;
+                        </p>
+                        <p>
+                            - la <b>process communication</b> : découverte des principes de la process communication à
+                            travers des tests et des jeux à la découverte de soi et de l’autre.
+                        </p>
+                    </div>
+                    
+                </div>
+            </article>
+
+            <article class="prestation container">   
+                <div class="prestationContent row">
+                    <div class="prestationImage column">
+                        <img src="/img/prestations/prestation2.webp" alt="Atelier de design thinking">
+                    </div>
+                    <div class="prestationText column">
+                        <h2 class="titleLeft">Atelier de design thinking</h2>
+                        <p>
+                            Design quoi ? DESIGN THINKING !   
+                        </p>
+                        <p>
+                            Mais c’est un outil du lean ? ET OUI !
+                        </p>
+                        <p>
+                            <b>Pourquoi ?</b><br>
+                            Vous avez besoin des solutions rapides, à une situation spécifique et vous souhaitez que ces
+                            solutions soient coconstruites avec les acteurs de votre entreprise. Nos experts vont au cours
+                            d’une journée intensive, réunir les acteurs de votre entreprise : opérationnels, managers, hse,
+                            achats, rh ou autres (en fonction de la situation) et les faire travailler ensemble vers un
+                            objectif commun et définit.                               
+                        </p>
+                        <p>
+                            <b>Comment ?</b><br>
+                            Après la collecte des données spécifiques, par nos experts, de la situation. Ils animeront le
+                            temps d’une journée un atelier avec différents temps de construction entre les acteurs. A la
+                            fin de celle-ci et toujours dans le respect.
+                        </p>
+                    </div>                        
+                </div>
+            </article>
+
+            <article class="prestation container">   
+                <div class="prestationContent row rowReverse">
+                    <div class="prestationImage column">
+                        <img src="/img/prestations/prestation3.webp" alt="Etudes et diagnostics">
+                    </div>                         
+                    <div class="prestationText column">
+                        <h2 class="titleLeft id="service2">Etudes et diagnostics</h2>
+                        <p>
+                            Toutes nos études et nos diagnostics s’articulent autour de notre méthodologie et sont
+                            centrées sur l’imbrication des enjeux performances et santé au travail.  
+                        </p>
+                        <p>
+                            Nos consultants travaillent sur l’ensemble des thématiques. 
+                        </p>
+                        <p>
+                            Selon les thématiques et vos besoins, nos experts mobilisent un large panel d’outils
+                            d’analyses et/ou de personnes ressources. En effet dans le souci de répondre au mieux à vos
+                            besoins, nous pouvons faire appel à notre réseau professionnel, pour y piocher des
+                            expertises autres que les nôtres (toxicologue, acousticiens, gestionnaire en énergies…)                        
+                        </p>
+                        <p>
+                            Nos partenariats et nos adhésions aux réseaux de professionnels sont pour nous, un réel
+                            atout afin de vous proposer des études et des solutions adaptées à vos besoins.
+                        </p>
+                    </div>                      
+                </div>
+            </article>
+
+            <article class="prestation container">   
+                <div class="prestationContent row">
+                    <div class="prestationImage column">
+                        <img src="/img/prestations/prestation4.webp" alt="Approche et coaching personnel">
+                    </div>
+                    <div class="prestationText column">
+                        <h2 class="titleLeft id="service3">Approche et coaching personnel</h2>
+                        <p>
+                            En nous appuyant sur des outils issus de l'analyse transactionnelle, nous proposons des approches brèves et personnalisées conçues spécialement pour les encadrants et les dirigeants.  
+                        </p>
+                        <p>
+                            Notre démarche commence par la compréhension approfondie de vos besoins et aspirations uniques. Nous utilisons des techniques de l'analyse transactionnelle pour examiner les schémas de communication, les dynamiques relationnelles et les comportements qui influencent vos interactions professionnelles. Cette approche nous permet de cibler rapidement les domaines d'amélioration potentiels.
+                        </p>
+                        <p>
+                            Nous comprenons que le temps est précieux, c'est pourquoi nos interventions brèves sont conçues pour obtenir des résultats tangibles rapidement.                                
+                        </p>
+                    </div>                        
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <%- include('./components/footer.ejs') %>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../../components/head.ejs', {
+    title: 'Ergogene | List users',
+    styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+    <%- include('../../components/header.ejs') %>
+
+    <% if (locals.message) { %>
+        <p class="message"><%= message %></p>
+    <% } %>
+
+    <a class="admin-panel" href="/admin">Dashboard</a>    
+    <% if (isAdmin) { %>
+        <a class="add-user" href="/users/create">Ajouter un utilisateur</a>
+    <% } %>
+    <% if (users) { %>
+        <h1>Liste des utilisateurs</h1>
+        <div class="wrapper">
+            <table class="list-users">
+                <tr>
+                    <th>Nom et Prénom</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td>
+                            <a class="full-name" href="/users/<%= user._id %>/">
+                                <%= user.lastname %> <%= user.firstname %>
+                            </a>
+                        </td>
+                        <td><%= user.fullaccess %></td>
+                        <td><%= user.email %></td>
+                        <td>
+                            <% if (isSuperAdmin || (isAdmin && user.fullaccess == 'user') || user._id == userId) { %>
+                                <a class="update" href="/users/<%= user._id %>/update/">Modifier</a>
+                            <% } %>
+                            <% if (isSuperAdmin || (isAdmin && user.fullaccess == 'user')) { %>
+                                <a class="delete" href="/users/<%= user._id %>/delete/">Supprimer</a>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+    <% } %>
+
+    <%- include('../../components/footer.ejs') %>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

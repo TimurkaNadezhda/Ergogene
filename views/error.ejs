@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <%- include('./components/head.ejs', { title: 'Error | Ergogene', description: 'Désolé, une erreur est survenue. Veuillez réessayer plus tard.' }) %>
+<body>
+    <%- include('./components/header.ejs') %>
+
+    <main class="center-aligned">
+        <h1>Erreur <%= locals.code || '404' %></h1>
+        <% if (locals.message) { %>
+            <p><%= message %></p>
+        <% } %>
+        <p><a href="javascript:history.back()">Go Back</a></p>
+    </main>
+
+    <%- include('./components/footer.ejs') %>
+
+    <script src="/scripts/main.js" defer></script>
+</body>
+</html>

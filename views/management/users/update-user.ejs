@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../../components/head.ejs', {
+    title: 'Ergogene | Update user',
+    styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+    <%- include('../../components/header.ejs') %>
+
+    <% if(message) { %> 
+      <p class="message"><%= message %></p>
+    <% } %>
+
+    <a class="admin-panel" href="/users">Revenir à la liste des utilisateurs</a>  
+    <main>
+        <h1>Mise à jour d'un utilisateur</h1>
+        <form action="/users/<%= detailsUser._id %>/update?_method=PUT" method="POST">
+            <%- include('../../components/errors.ejs') %>
+
+            <% if(isSuperAdmin) { %>
+                <label for="role">Choisissez un rôle</label>
+                <select name="fullaccess" id="role">
+                    <option value="admin"<%= (detailsUser && detailsUser.fullaccess === 'admin') ? ' selected' : '' %>>admin</option>
+                    <option value="user"<%= (detailsUser && detailsUser.fullaccess === 'user') ? ' selected' : '' %>>utilisateur</option>   
+                </select>
+            <% } else { %>
+                <input type="hidden" name="fullaccess" value="user" />
+            <% } %>
+            <div>
+                <label for="lastname">Nom</label>
+                <input type="text" id="lastname" name="lastname" value="<%= detailsUser ? detailsUser.lastname : '' %>"> 
+            </div>
+            <div>
+                <label for="firstname">Prénom</label>
+                <input type="text" id="firstname" name="firstname" value="<%= detailsUser ? detailsUser.firstname : '' %>"> 
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<%= detailsUser ? detailsUser.email : '' %>"> 
+            </div>
+            
+            <button class="form-button">Modifier</button>
+        </form>
+    </main>
+
+    <%- include('../../components/footer.ejs') %>  
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

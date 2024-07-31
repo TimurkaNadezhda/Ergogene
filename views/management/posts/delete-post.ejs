@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../../components/head.ejs', {
+    title: 'Ergogene | Delete post',
+    styles: [ '/styles/admin.css' ]
+}) %>
+<body>
+    <%- include('../../components/header.ejs') %>
+
+    <main class="center-aligned">
+        <h1>Suppression de la publication <br> "<%= detailsPost.title %>"</h1>
+        
+        <form action="/posts/<%= detailsPost._id %>/delete?_method=DELETE" method="POST">
+            <p>Étes-vous sûr de vouloir supprimer cette publication?</p>
+            <a class="cancel" href="/posts">Annuler</a>
+            <button class="form-button">Confirmer</button>
+        </form>
+    </main>
+
+    <%- include('../../components/footer.ejs') %>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

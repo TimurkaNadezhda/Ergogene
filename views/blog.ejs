@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <%- include('./components/head.ejs', { title: 'Blog | Ergogene', description: 'Sur notre blog, découvrez-en plus sur l&#39;ergonomie et le Congrès International de la Société d&#39;Ergonomie de Langue Française (CISEF).' }) %>
+<body>
+    <%- include('./components/header.ejs') %>
+        
+    <main>
+        <div class="container">
+            <section class="posts">
+                <% posts.forEach(post => { %>
+                    <article class="post">
+                        <div class="post__main">
+                            <img class="post__img" src="/img/blog/<%= post.id %>.webp" alt="<%= post.title %>" />
+                            <h3 class="post__title"><%= post.title %></h3>
+                            <p class="post__subtitle"><%= post.subtitle %></p>
+                            <p class="post__date"><%= post.date %></p>
+                        </div>
+                        
+                        <div class="post__resume">
+                            <h4>Résumé</h4>
+                            <p><%= post.summary %></p>
+                        </div>
+
+                        <div class="post__actions">
+                            <a class="post__link" href="<%= post.link %>" target="_blank">
+                                <span>En savoir plus</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>                                  
+                            </a>
+                        </div>
+                    </article>
+                <% }) %>
+            </section>
+        </div>
+    </main>    
+            
+    <%- include('./components/footer.ejs') %>
+    
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

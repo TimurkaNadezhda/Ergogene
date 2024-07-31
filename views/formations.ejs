@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <%- include('./components/head.ejs', { title: 'Formations | Ergogene', description: 'La transmission des savoirs est une valeur fondamentale pour notre cabinet. Nous vous proposons des formations adaptées à l&#39;apprentissage de l&#39;adulte, ainsi que des formations-action. Découvrez nos formations sur-mesure abordant des thématiques telles que l&#39;ergo-conception, la prévention des TMS, l&#39;analyse du travail, la conduite de projet, et bien plus encore, avec l&#39;utilisation d&#39;outils innovants comme KIMEA.' }) %>
+<body>
+    <%- include('./components/header.ejs') %>  
+
+    <main>
+        <section class="formation container">
+            <div class="head-block column">
+                <h1 class="titleLeft"><span class="mainTitle">Formations</span> Ergogene</h1>
+                <p>
+                    La transmission des savoirs est une valeur fondamentale pour notre cabinet, pour répondre
+                    à celle-ci nous vous proposons de vous accompagner à travers un volet formation. Nous
+                    dispensons 2 types de formations :<br>
+                    - la formation dite « classique » adapté à l’apprentissage de l’adulte et/ des étudiants;<br>
+                    - la formation dite « formation action ».
+                </p>   
+            </div>
+
+            <article class="formation container">   
+                <div class="formationContent row rowReverse">
+                    <div class="formationImage column">
+                        <img src="/img/formations/formation1.webp" alt="La formation « classique »">
+                    </div>
+                    <div class="formationText column">
+                        <h2 class="titleLeft">La formation « classique »</h2>
+                        <p>
+                            En fonction des objectifs de votre entreprise et des stagiaires, nous adaptons nos supports
+                            de formations pour concevoir des formations sur-mesure.
+                        </p>
+                        <p>
+                            Nous abordons des thématiques, issues des expériences et principes ergonomiques, telles
+                            que : l’ergo-conception, la prévention des TMS, l’analyse du travail, la conduite de projet,
+                            l’utilisation de la vidéo motion avec KIMEA.
+                        </p>
+                        <p>
+                            Et d’autres issues de l’analyse transactionnelle des organisations de travail comme la
+                            process communication, à destination de l’encadrement, des professions au contact du
+                            public. L’objectif : vous remettre les clés d’un management opérationnel de qualité.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="formation container">   
+                <div class="formationContent row">
+                    <div class="formationImage with-background column">
+                        <img src="/img/formations/formation2.webp" alt="La formation-action">
+                    </div>
+                    <div class="formationText column">
+                        <h2 class="titleLeft">La formation-action</h2>
+                        <p>
+                            Après avoir initié la construction sociale du projet, nos experts vont co-conduire le projet en
+                            interne. Au cours de cette co-construction du projet, nos experts transmettre aux
+                            apprenants leur savoir-faire, leurs outils (ex : comment utiliser kimea ou la simulation
+                            d’activité) ainsi que les supports.
+                        </p>
+                        <p>
+                            Au fur et à mesure du déroulement du projet, les acteurs montent en connaissances et en
+                            compétences. L’objectif final est l’autonomie des apprenants et de l’entreprise. Pour une
+                            pérennisation complète, nos experts peuvent garantir un suivi trimestriel.
+                        </p>
+                    </div>                        
+                </div>
+            </article>
+        </section>
+    </main>    
+   
+    <%- include('./components/footer.ejs') %>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

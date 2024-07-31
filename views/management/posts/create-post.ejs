@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../../components/head.ejs', {
+    title: 'Ergogene | Post creation',
+    styles: [ '/styles/admin.css', 'https://unpkg.com/js-datepicker/dist/datepicker.min.css' ]
+}) %>
+<body>
+   <%- include('../../components/header.ejs') %>
+
+    <a class="admin-panel" href="/posts">Revenir à la liste des publications</a>
+    <main>
+        <h1>Ajouter un publication</h1>
+        <form action="/posts/create" method="POST">
+            <%- include('../../components/errors.ejs') %>
+            <div class="form-inputs">
+                <label for="title">Titres</label>
+                <input type="text" id="title" name="title" value="<%= (locals.formData && locals.formData.title) ? locals.formData.title : '' %>" />
+            </div>
+            <div class="form-inputs">
+                <label for="subtitle">Sous-titres</label>
+                <input type="text" id="subtitle" name="subtitle" required value="<%= (locals.formData && locals.formData.subtitle) ? locals.formData.subtitle : '' %>" />
+            </div>
+            <div class="form-inputs">
+                <label for="date">Dates</label> 
+                <input
+                    type="text"
+                    id="date"
+                    name="date"
+                    autocomplete="false"
+                    required
+                    value="<%= (locals.formData && locals.formData.date) ? locals.formData.date : '' %>" />
+            </div>
+            <div class="form-inputs">
+                <label for="link">Link</label>
+                <input type="text" id="link" name="link" required value="<%= (locals.formData && locals.formData.link) ? locals.formData.link : '' %>" />
+            </div>
+            <div class="form-inputs">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="1">Published</option>
+                    <option value="0" selected>Draft</option>
+                </select>
+            </div>
+            <div class="form-inputs">
+                <label for="summary">Résumé</label>
+                <textarea id="summary" name="summary">
+                    <%= (locals.formData && locals.formData.summary) ? locals.formData.summary : '' %>
+                </textarea>                      
+            </div>
+            <button class="form-button">Ajouter</button>
+        </form>
+    </main>
+    
+    <%- include('../../components/footer.ejs') %>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

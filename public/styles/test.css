@@ -1,0 +1,287 @@
+/* Réinitialisation des styles et variables globales */
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Variables globales */
+:root {
+    --color-primary: #537767; /* Couleur principale */
+    --font-primary: 'EB Garamond', serif; /* Police principale */
+    --font-secondary: 'Oswald', sans-serif; /* Police secondaire */
+}
+
+/* Styles globaux pour le corps de la page */
+body {
+    min-height: 100vh;
+    font-family: var(--font-primary);
+    font-size: 16px;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Styles pour la barre de navigation supérieure */
+.top {
+    height: 26px;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+
+.top__contacts {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.email, .phone {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.email svg, .phone svg {
+    width: 16px;
+    height: 16px;
+}
+
+.email a, .phone a {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.auth {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.auth a {
+    color: white;
+    font-size: 0.75rem;
+}
+
+button.language-top  {
+    height: 15px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
+button.language-top img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Styles pour le logo et le menu de navigation */
+section.logoMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1500px;
+    margin: 1rem auto;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .logo img {
+    height: 80px;  
+}
+
+.menu {
+    width: 80px;
+    height: 55px;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: white;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.menu svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+section.logoMenu ul {
+    display: none;
+}
+
+section.logoMenu li.active {
+    border-bottom: 5px solid var(--color-primary);
+}
+
+section.logoMenu li.search {
+    position: relative;
+}
+
+section.logoMenu li.search button {
+    cursor: pointer;
+    border: none;
+    background: rgba(83,119,103,1);
+    padding: 0.375rem;
+}
+
+section.logoMenu li.search button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: white;
+}
+
+section.logoMenu li.search .searchInput {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.375rem;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: none;
+}
+
+section.logoMenu li.search:is(:hover, :focus-within) .searchInput {
+    display: block;
+}
+
+/* Section principale de la page */
+.page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Styles pour les éléments de services */
+.services__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #e3e3e3;
+    border-radius: 0.5rem;
+}
+
+.services__item svg {
+    width: 48px;
+    height: 48px;
+    fill: var(--color-primary);
+}
+
+.services__item h3 {
+    margin: 1rem 0;
+}
+
+/* Styles pour la méthodologie */
+.methodology {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.methodology img {
+    max-width: 100%;
+}
+
+.methodology .methodology__content {
+    max-width: 500px;
+}
+
+.methodology h2 {
+    margin-bottom: 1rem;
+}
+
+/* Styles pour les secteurs */
+.sectors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.sectors__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #e3e3e3;
+    border-radius: 0.5rem;
+}
+
+.sectors__item img {
+    max-width: 100%;
+}
+
+.sectors__item h3 {
+    margin: 1rem 0;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.footer .logo img {
+    height: 40px;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer .social-icons a:hover {
+    color: #72bfac;
+}
